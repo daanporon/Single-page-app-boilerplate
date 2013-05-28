@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <url>
+        <loc>http://{{ base_host }}{{ path 'home_path' }}</loc>
+        <lastmod>{{ lastmod }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    {{#each pages}}
+        <url>
+            <loc>http://{{ ../base_host }}{{ path 'content_detail_path' slug }}</loc>
+            <lastmod>{{ ../lastmod }}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.7</priority>
+            <image:image>
+               <image:loc>http://{{ ../base_host }}/resources/content/{{ slug }}/large.jpg</image:loc>
+            </image:image>
+            <video:video>
+                <video:title>{{ title }}</video:title>
+                <video:description>{{ desc }}</video:description>
+                <video:thumbnail_loc>http://{{ ../base_host }}/resources/content/{{ slug }}/thumbnail.jpg</video:thumbnail_loc>
+                <video:player_loc allow_embed="yes">http://www.vimeo.com/moogaloop.swf?clip_id={{ video }}</video:player_loc>
+            </video:video>
+        </url>
+    {{/each}}
+</urlset>

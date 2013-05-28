@@ -1,0 +1,17 @@
+{
+    "name": "spa-boilerplate",
+    "main": "server.js",
+    "version": "0.1.0",
+    "author": "Daan Poron",
+    "dependencies": {
+        "express": "latest",
+        "hbs": "2.0.2",
+        "handlebars": "1.0.9",
+        "connect": "*",
+        "file": "*",
+        "underscore": "*",
+        "underscore.string": "*",
+        "request": "*",
+        "moment": "2.0.0"
+    }
+}
